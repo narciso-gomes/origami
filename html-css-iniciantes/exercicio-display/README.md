@@ -21,3 +21,6 @@ Carro modelo 2045, com 200km rodados.
 
 Bicicleta: R$ 199
 Bicicleta modelo 2050, com 20km rodados.
+
+
+![image](https://github.com/narciso-gomes/origami/assets/47224350/1e38e61e-a2e5-46ed-828c-b12be45c0574)
