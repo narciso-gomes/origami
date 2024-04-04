@@ -16,21 +16,81 @@
     <div id="root"></div>
 
     <script type="text/babel">
-      function Button() {
-        const [total, setTotal] = React.useState(0);
-        return (
-          <button onClick={() => setTotal(total + 1)}>Adicionar {total}</button>
-        );
-      }
       function App() {
         return (
           <div>
-            <h1>Aplicativo React</h1>
-            <Button />
-            <Button />
+            <MainNav />
+            <ButtonBuy />
+            <hr />
+            <Products />
+            <hr />
+            <ButtonAddNumber />
+            <hr />
+            <Shopping />
           </div>
         );
       }
+
+      function MainNav() {
+        return (
+          <nav>
+            <ul>
+              <li>
+                <a href="#">Link 1</a>
+              </li>
+              <li>
+                <a href="#">Link 2</a>
+              </li>
+            </ul>
+          </nav>
+        );
+      }
+
+      function ButtonBuy() {
+        return <button>Comprar</button>;
+      }
+
+      function ButtonAddNumber() {
+        const [total, setTotal] = React.useState(0);
+        return (
+          <button onClick={() => setTotal(total + 1)}>
+            Adicionar: {total}
+          </button>
+        );
+      }
+
+      const Products = () => {
+        const product1 = "Camisa";
+        const product2 = "Bermuda";
+        function buyProduct(event) {
+          console.log("Buying: ", event.target.innerText);
+        }
+        return (
+          <div>
+            <button onClick={buyProduct}>
+              {product1} - R$ {Math.random() * 100}
+            </button>
+            <br />
+            <button onClick={buyProduct}>
+              {product2} - R$ {Math.random() * 100}
+            </button>
+          </div>
+        );
+      };
+
+      const Shopping = () => {
+        const [count, setCount] = React.useState(0);
+        function buy() {
+          setCount(count + 1);
+        }
+        return (
+          <div>
+            <button onClick={buy}>Comprar: {count}</button>
+            <p>Total: {count}</p>
+            <p>Preço: {count * 250}</p>
+          </div>
+        );
+      };
 
       const container = document.getElementById("root");
       const root = ReactDOM.createRoot(container);
