@@ -1,5 +1,12 @@
 const TopBar = () => {
-  return <h1>TO-DO NOW</h1>;
+  const headerStyle = {
+    color: "black",
+    textAlign: "center",
+    fontFamily: "Arial, Sans-serif",
+    fontWeight: "100",
+  };
+
+  return <h1 style={headerStyle}>TODO LIST</h1>;
 };
 
 export default TopBar;
